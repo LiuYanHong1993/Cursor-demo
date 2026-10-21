@@ -13,7 +13,7 @@
 
 浏览器打开 [http://localhost:3000](http://localhost:3000)
 
-详细运维说明（装 Docker、停止/重置/卸载、数据卷）：见 **[DEPLOY.md](./DEPLOY.md)**。
+正式部署与运维说明（环境要求、校验、回滚等）：见 **[《统一支撑平台部署手册》](./部署手册.md)**（[DEPLOY.md](./DEPLOY.md) 为简明入口）。
 
 也可直接：
 

@@ -28,6 +28,7 @@ COPY_ITEMS=(
   eslint.config.mjs
   README.md
   DEPLOY.md
+  部署手册.md
   deploy.sh
   stop.sh
   reset.sh
@@ -64,7 +65,8 @@ Windows：
   双击 deploy.bat
   或在 PowerShell：.\deploy.ps1
 
-详细说明见 DEPLOY.md
+正式说明见《统一支撑平台部署手册》：部署手册.md
+（DEPLOY.md 为简明入口）
 初始管理员账号：admin / admin123
 默认端口：http://localhost:3000
 EOF
