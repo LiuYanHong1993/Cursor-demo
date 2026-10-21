@@ -14,12 +14,12 @@ export default function ResourcesPage() {
         {
           title: "数据库原理实验数据集",
           meta: "数据 · CSV",
-          body: "与用户批量导入导出演示共用 CSV 约定，便于现场操作。",
+          body: "与用户批量导入导出功能共用 CSV 约定。",
         },
         {
           title: "统一认证对接说明",
           meta: "文档",
-          body: "演示版使用 Session + RBAC；生产可替换为校园统一认证。",
+          body: "支撑平台使用 Session + RBAC；生产可替换为校园统一认证。",
         },
       ]}
     />

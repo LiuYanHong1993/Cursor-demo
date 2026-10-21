@@ -11,7 +11,7 @@ const tone: Record<ItemStatus, "slate" | "amber" | "emerald" | "rose"> = {
   archived: "rose",
 };
 
-export function StateMachineDemo({
+export function StateMachinePanel({
   items,
 }: {
   items: { id: number; title: string; status: ItemStatus; content: string; updated_at: string }[];

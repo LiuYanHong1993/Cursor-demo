@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Button, PageHeader, Table } from "@/components/ui";
 
-export function UploadDemo({
+export function UploadPanel({
   files,
 }: {
   files: {
@@ -34,7 +34,7 @@ export function UploadDemo({
     <div>
       <PageHeader
         title="本地文件上传"
-        desc="文件写入 DATA_DIR/uploads，元数据入库。演示设备存储与传输能力。"
+        desc="文件写入 DATA_DIR/uploads，元数据入库。支持设备存储与传输能力。"
         actions={
           <Button type="button" onClick={() => ref.current?.click()}>
             选择文件

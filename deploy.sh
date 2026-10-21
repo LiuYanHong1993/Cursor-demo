@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 统一支撑平台 V1.0 演示版 · 一键启动
+# 统一支撑平台 V1.0 · 一键启动
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -7,7 +7,7 @@ cd "$ROOT"
 
 PORT="${USP_PORT:-3000}"
 URL="http://localhost:${PORT}"
-COMPOSE_PROJECT="${COMPOSE_PROJECT_NAME:-usp-demo}"
+COMPOSE_PROJECT="${COMPOSE_PROJECT_NAME:-usp}"
 
 red() { printf '\033[31m%s\033[0m\n' "$*"; }
 green() { printf '\033[32m%s\033[0m\n' "$*"; }
@@ -15,7 +15,7 @@ yellow() { printf '\033[33m%s\033[0m\n' "$*"; }
 info() { printf '%s\n' "$*"; }
 
 fail_docker() {
-  red "错误：未检测到可用的 Docker，无法启动演示环境。"
+  red "错误：未检测到可用的 Docker，无法启动运行环境。"
   echo
   info "请先安装 Docker Desktop（含 Compose），安装后重新打开终端再执行本脚本。"
   echo
@@ -79,7 +79,7 @@ if [[ ! -f "$ROOT/.env" ]]; then
   fi
 fi
 
-info "=== 统一支撑平台 V1.0 演示版 · 一键部署 ==="
+info "=== 统一支撑平台 V1.0 · 一键部署 ==="
 info "项目目录: $ROOT"
 info "Compose:  ${COMPOSE[*]}"
 info "访问端口: $PORT"
@@ -118,7 +118,7 @@ echo
 info "访问地址: $URL"
 info "管理登录: $URL/login"
 echo
-info "默认账号："
+info "初始管理员账号："
 info "  管理员  admin / admin123"
 info "  教师    teacher / teacher123"
 info "  学生    student01 / student123"

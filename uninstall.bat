@@ -2,7 +2,7 @@
 setlocal
 chcp 65001 >nul
 cd /d "%~dp0"
-set "COMPOSE_PROJECT_NAME=usp-demo"
+set "COMPOSE_PROJECT_NAME=usp"
 
 where docker >nul 2>&1
 if errorlevel 1 (
@@ -10,7 +10,7 @@ if errorlevel 1 (
   exit /b 1
 )
 
-echo 将删除容器、网络与数据卷 usp_data（演示数据不可恢复）。
+echo 将删除容器、网络与数据卷 usp_data（业务数据不可恢复）。
 set /p ans=确认卸载？[y/N] 
 if /I not "%ans%"=="y" if /I not "%ans%"=="yes" (
   echo 已取消。

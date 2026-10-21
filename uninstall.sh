@@ -4,7 +4,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
-COMPOSE_PROJECT="${COMPOSE_PROJECT_NAME:-usp-demo}"
+COMPOSE_PROJECT="${COMPOSE_PROJECT_NAME:-usp}"
 export COMPOSE_PROJECT_NAME="$COMPOSE_PROJECT"
 
 if command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1; then
@@ -16,7 +16,7 @@ else
   exit 1
 fi
 
-echo "将删除容器、网络与数据卷 usp_data（演示数据不可恢复）。"
+echo "将删除容器、网络与数据卷 usp_data（业务数据不可恢复）。"
 read -r -p "确认卸载？[y/N] " ans
 case "${ans:-}" in
   y|Y|yes|YES) ;;

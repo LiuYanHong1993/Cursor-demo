@@ -6,15 +6,15 @@ cd /d "%~dp0"
 set "PORT=3000"
 if not "%USP_PORT%"=="" set "PORT=%USP_PORT%"
 set "URL=http://localhost:%PORT%"
-set "COMPOSE_PROJECT_NAME=usp-demo"
+set "COMPOSE_PROJECT_NAME=usp"
 
-echo === 统一支撑平台 V1.0 演示版 · 一键部署 ===
+echo === 统一支撑平台 V1.0 · 一键部署 ===
 echo 项目目录: %CD%
 echo.
 
 where docker >nul 2>&1
 if errorlevel 1 (
-  echo 错误：未检测到 Docker，无法启动演示环境。
+  echo 错误：未检测到 Docker，无法启动运行环境。
   echo.
   echo 请先安装 Docker Desktop（含 Compose），然后重新打开命令行再执行本脚本。
   echo 下载：https://docs.docker.com/desktop/setup/install/windows-install/
@@ -81,7 +81,7 @@ echo.
 echo 访问地址: %URL%
 echo 管理登录: %URL%/login
 echo.
-echo 默认账号：
+echo 初始管理员账号：
 echo   管理员  admin / admin123
 echo   教师    teacher / teacher123
 echo   学生    student01 / student123

@@ -1,6 +1,6 @@
-# 统一支撑平台 V1.0 · 演示版
+# 统一支撑平台 V1.0
 
-可一键部署的 B/S 演示系统：门户栏目 + 组织/用户/RBAC + 访问日志 + 主机/系统监控示意 + 支撑组件样例。
+可一键部署的 B/S 系统：门户栏目 + 组织/用户/RBAC + 访问日志 + 主机/系统监控示意 + 支撑组件样例。
 
 ## 最快启动（推荐）
 
@@ -21,7 +21,7 @@
 docker compose up --build
 ```
 
-### 默认账号
+### 初始管理员账号
 
 | 角色 | 用户名 | 密码 |
 |------|--------|------|
@@ -48,7 +48,7 @@ npm run pack:deploy
 # 等价：./scripts/pack-deploy.sh
 ```
 
-产物：`dist/usp-demo-deploy.zip`  
+产物：`dist/usp-deploy.zip`  
 内容含应用源码、`Dockerfile`、`docker-compose.yml`、`.env.example`、一键脚本与中文 `DEPLOY.md`。解压后执行 `./deploy.sh`（或 `deploy.bat`）即可。
 
 ## 本地开发（无需 Docker）
@@ -58,7 +58,7 @@ npm install
 npm run dev
 ```
 
-## 演示路径（约 5 分钟）
+## 操作路径（约 5 分钟）
 
 1. **门户**：顶部导航切换「平台概况 / 通知公告 / 教学资源 / 实验中心 / 线下实验室 / 学生活动 / 学生用户中心」
 2. **登录后台**：门户右上角「管理登录」→ `admin / admin123`
@@ -76,7 +76,7 @@ npm run dev
 - 数据目录挂载命名卷 `usp_data` → 容器 `/app/data`
 - 监控与 SQL 防火墙为 **Mock**；用户/角色/日志为真实 CRUD
 
-### 多实例（演示级说明）
+### 多实例（扩展说明）
 
 当前 Compose 为单实例。扩到多实例时建议：换 Postgres/MySQL、Session 共享（如 Redis）、上传走共享存储、Nginx 负载与 HTTPS（`COOKIE_SECURE=true`）。
 
@@ -91,7 +91,7 @@ npm run dev
 | 访问日志查看/导出/删除 | 已覆盖 |
 | 主机 CPU/内存/磁盘 | 已覆盖（Mock 刷新） |
 | SQL / 防火墙 / Web / URL 监控 | 已覆盖（Mock 指标与表格） |
-| 缓存 / 状态机 / 列表编辑 / 表单校验 / 上传 | 已覆盖（演示级） |
+| 缓存 / 状态机 / 列表编辑 / 表单校验 / 上传 | 已覆盖（样例级） |
 | 一键部署包（脚本 + zip） | 已覆盖 |
 | 多数据库驱动切换 | Stub（当前仅 SQLite） |
 | 真实集群 / APM 探针 / SQL 防火墙引擎 | Stub（文档级说明） |

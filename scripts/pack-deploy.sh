@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# 打包一键部署 zip：dist/usp-demo-deploy.zip
+# 打包一键部署 zip：dist/usp-deploy.zip
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 OUT_DIR="$ROOT/dist"
-STAGE="$OUT_DIR/usp-demo-deploy"
-ZIP="$OUT_DIR/usp-demo-deploy.zip"
+STAGE="$OUT_DIR/usp-deploy"
+ZIP="$OUT_DIR/usp-deploy.zip"
 STAMP="$(date +%Y%m%d)"
 
 rm -rf "$STAGE"
@@ -54,7 +54,7 @@ chmod +x "$STAGE"/deploy.sh "$STAGE"/stop.sh "$STAGE"/reset.sh "$STAGE"/uninstal
 
 # 部署包内简短入口说明（避免用户找错文件）
 cat > "$STAGE/开始部署.txt" <<'EOF'
-统一支撑平台 V1.0 演示版 · 一键部署包
+统一支撑平台 V1.0 · 一键部署包
 ====================================
 
 Linux / macOS：
@@ -65,7 +65,7 @@ Windows：
   或在 PowerShell：.\deploy.ps1
 
 详细说明见 DEPLOY.md
-默认账号：admin / admin123
+初始管理员账号：admin / admin123
 默认端口：http://localhost:3000
 EOF
 
@@ -73,16 +73,16 @@ rm -f "$ZIP"
 (
   cd "$OUT_DIR"
   if command -v zip >/dev/null 2>&1; then
-    zip -r -q "usp-demo-deploy.zip" "usp-demo-deploy"
+    zip -r -q "usp-deploy.zip" "usp-deploy"
   else
     # 无 zip 时用 tar.gz，并额外生成同名说明
-    tar -czf "usp-demo-deploy.tar.gz" "usp-demo-deploy"
-    echo "本环境无 zip 命令，已生成 usp-demo-deploy.tar.gz" >&2
+    tar -czf "usp-deploy.tar.gz" "usp-deploy"
+    echo "本环境无 zip 命令，已生成 usp-deploy.tar.gz" >&2
     # 仍尝试用 Python 打 zip，保证交付 zip
     python3 - <<'PY'
 import pathlib, zipfile
-out = pathlib.Path("usp-demo-deploy.zip")
-root = pathlib.Path("usp-demo-deploy")
+out = pathlib.Path("usp-deploy.zip")
+root = pathlib.Path("usp-deploy")
 with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     for p in root.rglob("*"):
         z.write(p, p.as_posix())
@@ -95,5 +95,5 @@ PY
 test -f "$ZIP"
 BYTES=$(wc -c < "$ZIP" | tr -d ' ')
 echo "已生成: $ZIP ($BYTES bytes)"
-echo "建议复制到发布目录，例如 Project media/usp-demo-deploy-${STAMP}.zip"
+echo "建议复制到发布目录，例如 Project media/usp-deploy-${STAMP}.zip"
 echo "$ZIP"

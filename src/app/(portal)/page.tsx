@@ -14,7 +14,7 @@ export default function HomePage() {
             为业务系统提供基础框架与组件能力，减少重复建设
           </h1>
           <p className="animate-rise max-w-xl text-sm leading-relaxed text-teal-100/75" style={{ animationDelay: "140ms" }}>
-            用户与权限、日志、缓存、表单校验、状态机、文件存储与监控示意一站演示。
+            用户与权限、日志、缓存、表单校验、状态机、文件存储与监控示意一站式提供。
           </p>
           <div className="animate-rise flex flex-wrap gap-3" style={{ animationDelay: "200ms" }}>
             <Link
@@ -36,7 +36,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-14">
         <h2 className="font-display text-2xl text-[#0b3d4a]">平台能力一览</h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-600">
-          本演示覆盖需求中的门户导航、组织与 RBAC、访问日志、主机/系统监控示意，以及若干支撑组件样例。
+          本系统覆盖需求中的门户导航、组织与 RBAC、访问日志、主机/系统监控示意，以及若干支撑组件样例。
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[

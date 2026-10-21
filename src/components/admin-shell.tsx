@@ -61,7 +61,7 @@ export function AdminShell({
     <aside className="flex h-full w-64 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
       <div className="border-b border-white/10 px-4 py-4">
         <div className="font-display text-lg text-white">统一支撑平台</div>
-        <div className="mt-1 text-xs text-slate-400">管理后台 · 演示 V1.0</div>
+        <div className="mt-1 text-xs text-slate-400">管理后台 · V1.0</div>
       </div>
       <div className="flex-1 overflow-y-auto px-2 py-3">
         {sections.map((sec) => (

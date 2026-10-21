@@ -1,6 +1,6 @@
 import { requireSession } from "@/lib/auth";
 import { getDb } from "@/lib/db";
-import { StateMachineDemo } from "./state-machine-demo";
+import { StateMachinePanel } from "./state-machine-panel";
 
 export default async function Page() {
   await requireSession("admin.support.fsm");
@@ -11,5 +11,5 @@ export default async function Page() {
     content: string;
     updated_at: string;
   }[];
-  return <StateMachineDemo items={items} />;
+  return <StateMachinePanel items={items} />;
 }

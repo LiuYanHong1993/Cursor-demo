@@ -14,7 +14,7 @@ export default function OfflineLabsPage() {
         {
           title: "B203 硬件接口实验室",
           meta: "需教师带队",
-          body: "演示「组织—资源」关联，不做真实门禁对接。",
+          body: "展示「组织—资源」关联，不做真实门禁对接。",
         },
       ]}
     />

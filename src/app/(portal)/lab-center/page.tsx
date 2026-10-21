@@ -9,7 +9,7 @@ export default function LabCenterPage() {
         {
           title: "网络攻防仿真舱",
           meta: "在线 · 开放中",
-          body: "演示门户入口；真实实验环境不在本仓库范围。",
+          body: "门户入口；真实实验环境不在本仓库范围。",
         },
         {
           title: "大数据可视化实训",

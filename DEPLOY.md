@@ -1,6 +1,6 @@
 # 统一支撑平台 V1.0 · 一键部署说明
 
-本说明面向**解压部署包后**在本机或服务器运行演示环境（B/S）。优先支持 Linux / macOS；Windows 可用 `deploy.bat` / `deploy.ps1`。
+本说明面向**解压部署包后**在本机或服务器运行统一支撑平台（B/S）。优先支持 Linux / macOS；Windows 可用 `deploy.bat` / `deploy.ps1`。
 
 ## 1. 前置：安装 Docker
 
@@ -38,12 +38,12 @@ chmod +x deploy.sh stop.sh reset.sh uninstall.sh
 
 首次会 `docker compose up --build`，需联网拉取 `node:22-bookworm-slim` 等基础镜像并完成本地构建。
 
-成功后脚本会打印访问地址与默认账号。
+成功后脚本会打印访问地址与初始管理员账号。
 
 - 门户：http://localhost:3000  
 - 管理登录：http://localhost:3000/login  
 
-### 默认账号
+### 初始管理员账号
 
 | 角色 | 用户名 | 密码 |
 |------|--------|------|
@@ -102,5 +102,5 @@ npm run pack:deploy
 ./scripts/pack-deploy.sh
 ```
 
-生成：`dist/usp-demo-deploy.zip`  
+生成：`dist/usp-deploy.zip`  
 解压后即可按上文一键启动（包内含 Dockerfile、compose、源码与脚本，现场 `compose up --build`）。

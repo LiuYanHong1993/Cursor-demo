@@ -1,6 +1,6 @@
 import { requireSession } from "@/lib/auth";
 import { getDb } from "@/lib/db";
-import { UploadDemo } from "./upload-demo";
+import { UploadPanel } from "./upload-panel";
 
 export default async function Page() {
   await requireSession("admin.support.upload");
@@ -13,5 +13,5 @@ export default async function Page() {
     uploaded_by: string;
     created_at: string;
   }[];
-  return <UploadDemo files={files} />;
+  return <UploadPanel files={files} />;
 }

@@ -22,7 +22,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 ENV DATA_DIR=/app/data
-ENV SESSION_SECRET=usp-demo-session-secret-change-me-32chars!!
+ENV SESSION_SECRET=usp-session-secret-change-me-please-32chars
 
 RUN apt-get update && apt-get install -y --no-install-recommends libstdc++6 \
   && rm -rf /var/lib/apt/lists/* \

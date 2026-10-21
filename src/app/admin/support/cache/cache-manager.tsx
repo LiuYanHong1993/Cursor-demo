@@ -47,7 +47,7 @@ export function CacheManager({
     <div>
       <PageHeader
         title="缓存管理"
-        desc="演示级 KV 缓存（SQLite 持久化），可扩展为 Redis。"
+        desc="平台 KV 缓存（SQLite 持久化），可扩展为 Redis。"
         actions={
           <Button type="button" variant="danger" onClick={clearAll}>
             清空全部

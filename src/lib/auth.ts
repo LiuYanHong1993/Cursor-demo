@@ -13,8 +13,8 @@ export type SessionData = {
 };
 
 export const sessionOptions: SessionOptions = {
-  password: process.env.SESSION_SECRET || "usp-demo-session-secret-change-me-32chars!!",
-  cookieName: "usp_demo_session",
+  password: process.env.SESSION_SECRET || "usp-session-secret-change-me-please-32chars",
+  cookieName: "usp_session",
   cookieOptions: {
     secure: process.env.NODE_ENV === "production" && process.env.COOKIE_SECURE === "true",
     httpOnly: true,

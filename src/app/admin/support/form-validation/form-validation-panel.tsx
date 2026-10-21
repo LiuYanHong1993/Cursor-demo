@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Alert, Button, Card, Input, PageHeader, Select } from "@/components/ui";
 import { userFormSchema } from "@/lib/validation";
 
-export function FormValidationDemo() {
+export function FormValidationPanel() {
   const [form, setForm] = useState({
     username: "ab",
     displayName: "A",

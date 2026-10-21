@@ -1,10 +1,10 @@
-# 统一支撑平台 V1.0 演示版 · PowerShell 一键启动
+# 统一支撑平台 V1.0 · PowerShell 一键启动
 $ErrorActionPreference = "Stop"
 Set-Location -Path $PSScriptRoot
 
 $Port = if ($env:USP_PORT) { $env:USP_PORT } else { "3000" }
 $Url = "http://localhost:$Port"
-$env:COMPOSE_PROJECT_NAME = "usp-demo"
+$env:COMPOSE_PROJECT_NAME = "usp"
 
 function Fail-Docker([string]$Msg) {
   Write-Host $Msg -ForegroundColor Red
@@ -16,7 +16,7 @@ function Fail-Docker([string]$Msg) {
 }
 
 if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
-  Fail-Docker "错误：未检测到 Docker，无法启动演示环境。"
+  Fail-Docker "错误：未检测到 Docker，无法启动运行环境。"
 }
 
 try {
@@ -62,7 +62,7 @@ Write-Host ""
 Write-Host "访问地址: $Url"
 Write-Host "管理登录: $Url/login"
 Write-Host ""
-Write-Host "默认账号："
+Write-Host "初始管理员账号："
 Write-Host "  管理员  admin / admin123"
 Write-Host "  教师    teacher / teacher123"
 Write-Host "  学生    student01 / student123"

@@ -2,7 +2,7 @@
 setlocal
 chcp 65001 >nul
 cd /d "%~dp0"
-set "COMPOSE_PROJECT_NAME=usp-demo"
+set "COMPOSE_PROJECT_NAME=usp"
 
 where docker >nul 2>&1
 if errorlevel 1 (

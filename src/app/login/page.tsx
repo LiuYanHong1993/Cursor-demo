@@ -35,7 +35,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top,#1a6b78,#0b3d4a_55%,#07262e)] px-4">
       <div className="w-full max-w-md rounded-2xl bg-[var(--usp-sand)] p-6 shadow-xl">
         <div className="font-display text-2xl text-[#0b3d4a]">统一支撑平台</div>
-        <p className="mt-1 text-sm text-slate-600">管理后台登录 · 演示 V1.0</p>
+        <p className="mt-1 text-sm text-slate-600">管理后台登录 · V1.0</p>
         <form onSubmit={onSubmit} className="mt-6 space-y-4">
           <div>
             <label className="mb-1 block text-sm text-slate-700">用户名</label>

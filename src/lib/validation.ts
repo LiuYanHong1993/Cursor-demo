@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-/** Shared front/back validation rules for demo forms */
+/** Shared front/back validation rules for platform forms */
 export const userFormSchema = z.object({
   username: z
     .string()

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Badge, Button, Card, Input, PageHeader, Select, Table, TextArea } from "@/components/ui";
 import { STATUS_LABEL, ItemStatus } from "@/lib/state-machine";
 
-export function BaseListDemo({
+export function BaseListPanel({
   items,
 }: {
   items: { id: number; title: string; status: ItemStatus; content: string; updated_at: string }[];

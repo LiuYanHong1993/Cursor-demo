@@ -42,7 +42,7 @@ export function GroupsManager({
 
   return (
     <div>
-      <PageHeader title="用户组管理" desc="将用户归入业务组，便于批量授权与通知（演示）。" />
+      <PageHeader title="用户组管理" desc="将用户归入业务组，便于批量授权与通知。" />
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="space-y-3">
           <h2 className="font-medium">新建用户组</h2>

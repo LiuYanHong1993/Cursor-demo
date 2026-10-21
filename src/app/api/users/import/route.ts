@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
           `UPDATE users SET display_name = ?, email = ?, status = ?, org_id = ? WHERE id = ?`
         ).run(
           row.display_name || username,
-          row.email || `${username}@demo.edu`,
+          row.email || `${username}@usp.local`,
           row.status || "active",
           org?.id ?? null,
           existing.id
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
           .run(
             username,
             row.display_name || username,
-            row.email || `${username}@demo.edu`,
+            row.email || `${username}@usp.local`,
             defaultHash,
             org?.id ?? null,
             row.status || "active"

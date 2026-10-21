@@ -1,7 +1,7 @@
 import { requireSession } from "@/lib/auth";
-import { FormValidationDemo } from "./form-validation-demo";
+import { FormValidationPanel } from "./form-validation-panel";
 
 export default async function Page() {
   await requireSession("admin.support.form");
-  return <FormValidationDemo />;
+  return <FormValidationPanel />;
 }

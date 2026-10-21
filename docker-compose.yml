@@ -7,7 +7,7 @@ services:
     environment:
       NODE_ENV: production
       DATA_DIR: ${DATA_DIR:-/app/data}
-      SESSION_SECRET: ${SESSION_SECRET:-usp-demo-session-secret-change-me-32chars!!}
+      SESSION_SECRET: ${SESSION_SECRET:-usp-session-secret-change-me-please-32chars}
       COOKIE_SECURE: ${COOKIE_SECURE:-false}
     volumes:
       # 命名卷：SQLite + 上传文件；reset/uninstall 的 down -v 会清空

@@ -21,7 +21,7 @@ export default async function AdminHome({
     <div>
       <PageHeader
         title="管理概览"
-        desc={`你好，${session.displayName}。按演示路径：组织 → 用户/角色 → 日志 → 监控。`}
+        desc={`你好，${session.displayName}。按操作路径：组织 → 用户/角色 → 日志 → 监控。`}
       />
       {sp.denied ? (
         <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
@@ -52,7 +52,7 @@ export default async function AdminHome({
             ))}
           </div>
           <Card className="mt-6">
-            <h2 className="font-medium">建议演示顺序</h2>
+            <h2 className="font-medium">建议操作顺序</h2>
             <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm text-slate-600">
               <li>组织树查看校/院→系→专业→班级</li>
               <li>用户 CSV 导出/导入，调整角色权限</li>

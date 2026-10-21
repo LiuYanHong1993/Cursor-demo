@@ -15,8 +15,8 @@ const display = Noto_Serif_SC({
 });
 
 export const metadata: Metadata = {
-  title: "统一支撑平台 V1.0 演示",
-  description: "可一键部署的统一支撑平台 B/S 演示系统",
+  title: "统一支撑平台 V1.0",
+  description: "可一键部署的统一支撑平台 B/S 系统",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

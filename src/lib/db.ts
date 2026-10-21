@@ -166,7 +166,7 @@ function seed(database: Database.Database) {
   );
 
   const schoolId = Number(
-    insertOrg.run(null, "演示大学", "school", "SCH-001").lastInsertRowid
+    insertOrg.run(null, "星河大学", "school", "SCH-001").lastInsertRowid
   );
   const collegeId = Number(
     insertOrg.run(schoolId, "信息工程学院", "college", "COL-001").lastInsertRowid
@@ -220,7 +220,7 @@ function seed(database: Database.Database) {
     insertRole.run("教师", "teacher", "查看监控与基础支撑示意").lastInsertRowid
   );
   const studentRoleId = Number(
-    insertRole.run("学生", "student", "门户访问（演示）").lastInsertRowid
+    insertRole.run("学生", "student", "门户访问权限").lastInsertRowid
   );
 
   const allPermIds = database.prepare("SELECT id FROM permissions").all() as { id: number }[];
@@ -244,19 +244,19 @@ function seed(database: Database.Database) {
      VALUES (?, ?, ?, ?, ?, ?)`
   );
   const adminId = Number(
-    insertUser.run("admin", "平台管理员", "admin@demo.edu", hash, collegeId, "active")
+    insertUser.run("admin", "平台管理员", "admin@usp.local", hash, collegeId, "active")
       .lastInsertRowid
   );
   const teacherId = Number(
     insertUser
-      .run("teacher", "张老师", "teacher@demo.edu", bcrypt.hashSync("teacher123", 10), deptId, "active")
+      .run("teacher", "张老师", "teacher@usp.local", bcrypt.hashSync("teacher123", 10), deptId, "active")
       .lastInsertRowid
   );
   const studentId = Number(
     insertUser.run(
       "student01",
       "李同学",
-      "student01@demo.edu",
+      "student01@usp.local",
       bcrypt.hashSync("student123", 10),
       majorCs,
       "active"

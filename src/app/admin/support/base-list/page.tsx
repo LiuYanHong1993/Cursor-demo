@@ -1,6 +1,6 @@
 import { requireSession } from "@/lib/auth";
 import { getDb } from "@/lib/db";
-import { BaseListDemo } from "./base-list-demo";
+import { BaseListPanel } from "./base-list-panel";
 
 export default async function Page() {
   await requireSession("admin.support.base");
@@ -11,5 +11,5 @@ export default async function Page() {
     content: string;
     updated_at: string;
   }[];
-  return <BaseListDemo items={items} />;
+  return <BaseListPanel items={items} />;
 }

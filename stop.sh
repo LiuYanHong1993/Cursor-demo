@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# 停止演示服务（保留数据卷）
+# 停止服务（保留数据卷）
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
-COMPOSE_PROJECT="${COMPOSE_PROJECT_NAME:-usp-demo}"
+COMPOSE_PROJECT="${COMPOSE_PROJECT_NAME:-usp}"
 export COMPOSE_PROJECT_NAME="$COMPOSE_PROJECT"
 
 if command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1; then
