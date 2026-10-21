@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --usp-ink: #0b3d4a;
+  --usp-teal: #0f766e;
+  --usp-sand: #f3efe6;
+  --usp-accent: #e8a317;
+  --background: #f3efe6;
+  --foreground: #13262b;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.font-display {
+  font-family: var(--font-display), "Noto Serif SC", serif;
+}
+
+.font-body {
+  font-family: var(--font-body), "Noto Sans SC", sans-serif;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.7s ease-out both;
+}
+
+.animate-drift {
+  animation: drift 7s ease-in-out infinite;
+}

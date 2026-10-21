@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DATA_DIR: /app/data
+      SESSION_SECRET: usp-demo-session-secret-change-me-32chars!!
+      # 若反向代理 HTTPS，可设 COOKIE_SECURE=true
+      COOKIE_SECURE: "false"
+    volumes:
+      - usp_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  usp_data:
