@@ -1,0 +1,14 @@
+{
+  "name": "ilook-vr-training",
+  "version": "1.0.0",
+  "description": "ilook 虚拟现实工程技术实训软件 V1.0 本地可运行原型",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ilook · 虚拟现实工程技术实训软件 V1.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="ilook 首页">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">ilook</span>
+      <span class="brand-ver">V1.0</span>
+    </a>
+    <nav class="nav">
+      <a href="#train">实训台</a>
+      <a href="#privacy">隐私层</a>
+      <a href="#consistency">一致性</a>
+      <a href="#components">组件 IPC</a>
+    </nav>
+    <div class="channel-pill" id="channelPill" title="传输通道状态">通道检测中…</div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="hero-brand">ilook</p>
+      <h1>虚拟现实工程技术实训软件</h1>
+      <p class="hero-lead">为工程实训提供有序流程编排、多层加密保护与组件化稳定运行——本地可运行原型。</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#train">进入实训台</a>
+        <a class="btn ghost" href="#components">查看组件环境</a>
+      </div>
+      <div class="hero-stage" aria-hidden="true">
+        <canvas id="vrCanvas" width="960" height="360"></canvas>
+        <span class="stage-caption">轻量 VR 场景示意（非完整引擎）</span>
+      </div>
+    </section>
+
+    <section id="train" class="panel">
+      <header class="panel-head">
+        <h2>实训任务台</h2>
+        <p>选择场景与学员，按状态机推进：简报 → 点检 → VR 实操 → 考核 → 复盘。</p>
+      </header>
+      <div class="train-grid">
+        <div class="field-block">
+          <label for="scenarioSelect">实训场景</label>
+          <select id="scenarioSelect"></select>
+          <label for="learnerSelect">学员</label>
+          <select id="learnerSelect"></select>
+          <button type="button" class="btn primary" id="startBtn">启动会话</button>
+          <button type="button" class="btn ghost" id="advanceBtn" disabled>完成当前步骤</button>
+          <button type="button" class="btn ghost" id="coachBtn" disabled>请求 AI 教练</button>
+        </div>
+        <div class="session-block">
+          <div class="session-meta" id="sessionMeta">尚未启动会话</div>
+          <ol class="flow" id="flowList"></ol>
+          <pre class="coach" id="coachBox" hidden></pre>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <h3>近期会话</h3>
+        <table>
+          <thead>
+            <tr><th>场景</th><th>学员</th><th>状态</th><th>得分</th><th>更新</th></tr>
+          </thead>
+          <tbody id="sessionRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="privacy" class="panel">
+      <header class="panel-head">
+        <h2>多层加密与个人信息保护</h2>
+        <p>传输通道示意 + 敏感字段 AES-GCM 存储加密 + 界面脱敏展示。</p>
+      </header>
+      <div class="privacy-actions">
+        <label class="toggle">
+          <input type="checkbox" id="secureChannel" checked />
+          <span>启用演示加密通道（X-Ilook-Channel）</span>
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>学员</th><th>组织</th><th>手机（脱敏）</th><th>证件（脱敏）</th>
+              <th>密文预览</th><th>同步</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="learnerRows"></tbody>
+        </table>
+      </div>
+      <pre class="reveal" id="revealBox" hidden></pre>
+    </section>
+
+    <section id="consistency" class="panel">
+      <header class="panel-head">
+        <h2>聚合一致性观察台</h2>
+        <p>聚合内强一致提交；会话完成后经 IPC 异步同步学员档案（最终一致）。</p>
+      </header>
+      <div class="split">
+        <div>
+          <h3>一致性日志</h3>
+          <ul class="log" id="consistencyLog"></ul>
+        </div>
+        <div>
+          <h3>Outbox / 待投影</h3>
+          <pre class="mono" id="outboxBox">[]</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="components" class="panel">
+      <header class="panel-head">
+        <h2>组件化环境与 IPC</h2>
+        <p>人工智能软件分类 · 组件心跳 · 高可靠消息总线（ACK / 重试 / 死信）。</p>
+      </header>
+      <p class="ai-tag" id="aiTag">分类加载中…</p>
+      <div class="comp-grid" id="compGrid"></div>
+      <h3>IPC 近期消息</h3>
+      <ul class="log mono-log" id="ipcLog"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>ilook</strong> 虚拟现实工程技术实训软件 V1.0 · 本地原型 · 非完整 VR 引擎
+  </footer>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
