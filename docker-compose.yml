@@ -1,0 +1,31 @@
+# 同目录 .env（可由 .env.example 复制）会自动用于变量替换
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DATA_DIR: ${DATA_DIR:-/app/data}
+      SESSION_SECRET: ${SESSION_SECRET:-usp-session-secret-change-me-please-32chars}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+    volumes:
+      # 命名卷：SQLite + 上传文件；reset/uninstall 的 down -v 会清空
+      - usp_data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://127.0.0.1:3000',r=>process.exit(r.statusCode<500?0:1)).on('error',()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+    restart: unless-stopped
+
+volumes:
+  usp_data:
+    name: usp_data
