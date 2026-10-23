@@ -29,6 +29,11 @@ COPY_ITEMS=(
   README.md
   DEPLOY.md
   部署手册.md
+  测试报告.md
+  用户手册.md
+  部署手册.pdf
+  测试报告.pdf
+  用户手册.pdf
   deploy.sh
   stop.sh
   reset.sh
@@ -65,8 +70,9 @@ Windows：
   双击 deploy.bat
   或在 PowerShell：.\deploy.ps1
 
-正式说明见《统一支撑平台部署手册》：部署手册.md
-（DEPLOY.md 为简明入口）
+正式文档（与本脚本同目录）：
+  部署手册.pdf / 测试报告.pdf / 用户手册.pdf
+  （另附同名 .md；DEPLOY.md 为简明入口）
 初始管理员账号：admin / admin123
 默认端口：http://localhost:3000
 EOF
